@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.game-c {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card .front,
+.card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+.card .front {
+    background-color: #3498db;
+    color: white;
+}
+
+.card .back {
+    background-color: #2ecc71;
+    transform: rotateY(180deg);
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+}
+
+.card:hover .back {
+    transform: rotateY(0deg);
+    transition: transform 0.6s;
+}
+
+.restart-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: #c0392b;
+}
